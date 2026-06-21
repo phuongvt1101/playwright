@@ -27,10 +27,10 @@ test ('download', async ({page}) => {
     await page.goto('https://the-internet.herokuapp.com/download');
 
     const downloadPromise = page.waitForEvent('download');
-    await page.getByRole('link', {name: 'file.json'}).click();
+    await page.getByRole('link', {name: 'hi.txt'}).click();
     const download = await downloadPromise;
     
-    await expect(download.suggestedFilename()).toBe('file.json');
+    await expect(download.suggestedFilename()).toBe('hi.txt');
 
 });
 
