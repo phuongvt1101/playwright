@@ -27,10 +27,10 @@ test ('download', async ({page}) => {
     await page.goto('https://the-internet.herokuapp.com/download');
 
     const downloadPromise = page.waitForEvent('download');
-    await page.getByRole('link', {name: 'izaro-upload-test15334684915728650358.txt'}).click();
+    await page.getByRole('link', {name: 'file.json'}).click();
     const download = await downloadPromise;
     
-    await expect(download.suggestedFilename()).toBe('izaro-upload-test15334684915728650358.txt');
+    await expect(download.suggestedFilename()).toBe('file.json');
 
 });
 
